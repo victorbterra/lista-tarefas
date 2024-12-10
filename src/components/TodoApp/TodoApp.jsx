@@ -24,10 +24,10 @@ const TodoApp = () => {
       //limpando o input
       setvalorInput("");
     }
-    // função para deletar tarefas
-    const handleDelete = (id) => {
-      setTarefas((prevTarefas) => prevTarefas.filter((tarefa) => tarefa.id!== id));
-    };
+  };
+  // função para deletar tarefas
+  const handleDelete = (id) => {
+    setTarefas((prevTarefas) => prevTarefas.filter((tarefa) => tarefa.id!== id));
   };
   return (
     <div className=" w-[400px] mx-auto mt-6 bg-slate-300 p-4 rounded-md">
