@@ -1,9 +1,14 @@
-import "./TodoApp.css";
 import React from "react";
 import { useState } from "react";
 
 const TodoApp = () => {
-  return <div>TodoApp</div>;
+  //lista de tarefas
+
+  return (
+    <div>
+      <h1 className=" text-red-500">Lista de Tarefas</h1>
+    </div>
+  );
 };
 
 export default TodoApp;
