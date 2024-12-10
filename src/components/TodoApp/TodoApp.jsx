@@ -23,11 +23,15 @@ const TodoApp = () => {
       setTarefas((prevTarefa) => [...prevTarefa, novaTarefa]);
       //limpando o input
       setvalorInput("");
+    } else {
+      alert("Por favor, digite um nome para a tarefa.");
     }
   };
   // função para deletar tarefas
   const handleDelete = (id) => {
-    setTarefas((prevTarefas) => prevTarefas.filter((tarefa) => tarefa.id!== id));
+    setTarefas((prevTarefas) =>
+      prevTarefas.filter((tarefa) => tarefa.id !== id)
+    );
   };
   return (
     <div className=" w-[400px] mx-auto mt-6 bg-slate-300 p-4 rounded-md">
@@ -50,7 +54,7 @@ const TodoApp = () => {
           Adicionar
         </button>
       </form>
-      {/* lista de tarefas */}
+      {/* Caso não haja tarefas */}
       {tarefas.length === 0 && (
         <p className="text-center py-3">Não há tarefas</p>
       )}
@@ -62,9 +66,9 @@ const TodoApp = () => {
             className="flex justify-between items-center bg-slate-200 py-2 px-2 my-2"
           >
             {tarefa.nome}
-            <button 
-            className="bg-red-500 text-white py-1 px-4 rounded-md"
-            onClick={() => handleDelete(tarefa.id)}
+            <button
+              className="bg-red-500 text-white py-1 px-4 rounded-md"
+              onClick={() => handleDelete(tarefa.id)}
             >
               Excluir
             </button>
